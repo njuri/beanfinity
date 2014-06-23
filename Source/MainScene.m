@@ -59,12 +59,17 @@ NSMutableArray *storeContent;
 
 -(void)updateAverage{
     if (average>0) {
-        double rem = fmod(average, 1);
-        if(rem==0){
+        if(fmod(average, 1)==0){
             _beansPerSecLabel.string = [NSString stringWithFormat:@"%.0f bps",average];
         }
-        else{
+        else if(fmod(average*10, 1)==0){
             _beansPerSecLabel.string = [NSString stringWithFormat:@"%.1f bps",average];
+        }
+        else if(fmod(average*100, 1)==0){
+            _beansPerSecLabel.string = [NSString stringWithFormat:@"%.2f bps",average];
+        }
+        else{
+            _beansPerSecLabel.string = [NSString stringWithFormat:@"%.3f bps",average];
         }
     }
 }
@@ -106,9 +111,15 @@ NSMutableArray *storeContent;
     if(!storeOpen){
         id action = [CCActionMoveTo actionWithDuration:.3
                                     position:CGPointMake(_storeNode.position.x,_storeNode.position.y+.235)];
+        id action3 = [CCActionMoveTo actionWithDuration:1
+                                              position:CGPointMake(_storeNode.position.x,_storeNode.position.y+.35)];
+        id action4 = [CCActionMoveTo actionWithDuration:1
+                                              position:CGPointMake(_storeNode.position.x,_storeNode.position.y-.35)];
         id action2 = [CCActionMoveTo actionWithDuration:.3
                                               position:CGPointMake(_scroll.position.x,_scroll.position.y-.38)];
         [_storeNode runAction:[CCActionEaseIn actionWithAction:action rate:3]];
+        [_storeNode runAction:[CCActionEaseIn actionWithAction:action3 rate:3]];
+        [_storeNode runAction:[CCActionEaseIn actionWithAction:action4 rate:3]];
         [_scroll runAction:[CCActionEaseIn actionWithAction:action2 rate:3]];
         [_storeDim runAction:[CCActionFadeTo actionWithDuration:.3 opacity:0.1]];
         [_storeText runAction:[CCActionFadeTo actionWithDuration:.3 opacity:0]];
@@ -159,6 +170,21 @@ NSMutableArray *storeContent;
         else{
             _counterLabel.string = [NSString stringWithFormat:@"%.1f",totalBeans];
         }
+    }
+}
+
+-(void)upgradeItem:(StoreItem*)item forPrice:(double)price{
+    updateMessage = YES;
+    if (item.count>0 && totalBeans>=price) {
+        totalBeans -= price;
+        average -= item.value*item.count;
+        double bonus = item.value * 0.25;
+        average += (item.value+bonus)*item.count;
+        [self updateAverage];
+        myMessage = [NSString stringWithFormat:@"Now %@ give 25%% more beans!",item.name];
+    }
+    else{
+        myMessage = [NSString stringWithFormat:@"Can't buy upgrade for %@.",item.name];
     }
 }
 

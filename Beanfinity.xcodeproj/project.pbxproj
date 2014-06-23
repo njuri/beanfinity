@@ -25,6 +25,7 @@
 		CBB40128195351DB0059FD16 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBB40127195351DB0059FD16 /* Images.xcassets */; };
 		CBB712EA194C54DA004C2857 /* StoreItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB712E9194C54DA004C2857 /* StoreItem.m */; };
 		CBC9C27E1954C773007DDEFF /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC9C27D1954C773007DDEFF /* Store.m */; };
+		CBCFF17519585A2C00D80475 /* Upgrade.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCFF17419585A2C00D80475 /* Upgrade.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		CBB712E8194C54DA004C2857 /* StoreItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreItem.h; path = Source/StoreItem.h; sourceTree = "<group>"; };
 		CBB712E9194C54DA004C2857 /* StoreItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreItem.m; path = Source/StoreItem.m; sourceTree = "<group>"; };
 		CBC9C27D1954C773007DDEFF /* Store.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Store.m; path = Source/Store.m; sourceTree = "<group>"; };
+		CBCFF17319585A2C00D80475 /* Upgrade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Upgrade.h; path = Source/Upgrade.h; sourceTree = "<group>"; };
+		CBCFF17419585A2C00D80475 /* Upgrade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Upgrade.m; path = Source/Upgrade.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,8 @@
 				CBB712E9194C54DA004C2857 /* StoreItem.m */,
 				CBC9C27D1954C773007DDEFF /* Store.m */,
 				CBAD434C19583E3900214326 /* Store.h */,
+				CBCFF17319585A2C00D80475 /* Upgrade.h */,
+				CBCFF17419585A2C00D80475 /* Upgrade.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 				B7378994180767190076A88C /* MainScene.m in Sources */,
 				CBB712EA194C54DA004C2857 /* StoreItem.m in Sources */,
 				CBC9C27E1954C773007DDEFF /* Store.m in Sources */,
+				CBCFF17519585A2C00D80475 /* Upgrade.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

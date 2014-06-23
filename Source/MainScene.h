@@ -12,5 +12,6 @@
 @interface MainScene : CCNode
 
 -(void)buyObject:(StoreItem*)item forPrice:(int)price;
+-(void)upgradeItem:(StoreItem*)item forPrice:(double)price;
 
 @end
