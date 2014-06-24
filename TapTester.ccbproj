@@ -94,6 +94,11 @@
 			<key>isSmartSpriteSheet</key>
 			<true/>
 		</dict>
+		<key>asstets/162.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
 		<key>asstets/bag.png</key>
 		<dict>
 			<key>scaleFrom</key>

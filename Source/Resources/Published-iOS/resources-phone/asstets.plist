@@ -4,6 +4,19 @@
 <dict>
 	<key>frames</key>
 	<dict>
+		<key>asstets/162.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{779, 1}, {114, 114}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {114, 114}}</string>
+			<key>sourceSize</key>
+			<string>{114, 114}</string>
+		</dict>
 		<key>asstets/bag.png</key>
 		<dict>
 			<key>frame</key>
@@ -20,7 +33,7 @@
 		<key>asstets/bean.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{345, 1}, {150, 143}}</string>
+			<string>{{627, 1}, {150, 143}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
@@ -33,11 +46,11 @@
 		<key>asstets/btn.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{1, 202}, {280, 200}}</string>
+			<string>{{345, 1}, {280, 200}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
-			<true/>
+			<false/>
 			<key>sourceColorRect</key>
 			<string>{{0, 0}, {280, 200}}</string>
 			<key>sourceSize</key>
@@ -46,7 +59,7 @@
 		<key>asstets/leaves.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{203, 202}, {278, 215}}</string>
+			<string>{{1, 202}, {278, 215}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
@@ -62,7 +75,7 @@
 		<key>format</key>
 		<integer>2</integer>
 		<key>size</key>
-		<string>{512, 512}</string>
+		<string>{1024, 1024}</string>
 		<key>textureFileName</key>
 		<string>asstets.png</string>
 	</dict>

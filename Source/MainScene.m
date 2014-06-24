@@ -38,7 +38,7 @@ NSMutableArray *storeContent;
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateAverage) userInfo:Nil repeats:YES];
     [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(updateMessage) userInfo:Nil repeats:YES];
     [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(updateTotal) userInfo:Nil repeats:YES];
-    
+
     //Add items to store
     storeContent = [[NSMutableArray alloc]init];
     
@@ -110,16 +110,10 @@ NSMutableArray *storeContent;
 -(void)storeButtonClick{
     if(!storeOpen){
         id action = [CCActionMoveTo actionWithDuration:.3
-                                    position:CGPointMake(_storeNode.position.x,_storeNode.position.y+.235)];
-        id action3 = [CCActionMoveTo actionWithDuration:1
-                                              position:CGPointMake(_storeNode.position.x,_storeNode.position.y+.35)];
-        id action4 = [CCActionMoveTo actionWithDuration:1
-                                              position:CGPointMake(_storeNode.position.x,_storeNode.position.y-.35)];
+                                    position:CGPointMake(_storeNode.position.x,_storeNode.position.y+.15)];
         id action2 = [CCActionMoveTo actionWithDuration:.3
-                                              position:CGPointMake(_scroll.position.x,_scroll.position.y-.38)];
+                                              position:CGPointMake(_scroll.position.x,_scroll.position.y-.3)];
         [_storeNode runAction:[CCActionEaseIn actionWithAction:action rate:3]];
-        [_storeNode runAction:[CCActionEaseIn actionWithAction:action3 rate:3]];
-        [_storeNode runAction:[CCActionEaseIn actionWithAction:action4 rate:3]];
         [_scroll runAction:[CCActionEaseIn actionWithAction:action2 rate:3]];
         [_storeDim runAction:[CCActionFadeTo actionWithDuration:.3 opacity:0.1]];
         [_storeText runAction:[CCActionFadeTo actionWithDuration:.3 opacity:0]];
@@ -129,9 +123,9 @@ NSMutableArray *storeContent;
     }
     else{
         id action = [CCActionMoveTo actionWithDuration:.4
-                                              position:CGPointMake(_storeNode.position.x,_storeNode.position.y-.235)];
+                                              position:CGPointMake(_storeNode.position.x,_storeNode.position.y-.15)];
         id action2 = [CCActionMoveTo actionWithDuration:.4
-                                               position:CGPointMake(_scroll.position.x,_scroll.position.y+.38)];
+                                               position:CGPointMake(_scroll.position.x,_scroll.position.y+.3)];
         [_scroll runAction:[CCActionEaseIn actionWithAction:action2 rate:3]];
         [_storeNode runAction:[CCActionEaseIn actionWithAction:action rate:2]];
         [_storeDim runAction:[CCActionFadeTo actionWithDuration:.4 opacity:0]];
@@ -163,8 +157,7 @@ NSMutableArray *storeContent;
     if (average>0) {
         double small = average/10;
         totalBeans +=small;
-        double rem = fmod(totalBeans, 1);
-        if (rem==0) {
+        if (fmod(totalBeans, 1)==0) {
             _counterLabel.string = [NSString stringWithFormat:@"%.0f",totalBeans];
         }
         else{

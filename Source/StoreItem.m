@@ -22,7 +22,7 @@
     _countLabel.string = [NSString stringWithFormat:@"%i",count];
     _priceLabel.string = [NSString stringWithFormat:@"%i",price];
     _nameLabel.string = name;
-    NSLog(@"Store item \"%@\" is loaded.",name);
+    //NSLog(@"Store item \"%@\" is loaded.",name);
 }
 
 -(void)tapOnImage{;
